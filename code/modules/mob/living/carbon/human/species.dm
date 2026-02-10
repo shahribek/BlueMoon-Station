@@ -733,16 +733,17 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			var/mutable_appearance/facial_overlay = mutable_appearance(fhair_file, fhair_state, -HAIR_LAYER)
 			facial_overlay.category = "HEAD"
 
-			if(!forced_colour)
-				if(hair_color)
-					if(hair_color == "mutcolor")
-						facial_overlay.color = "#" + H.dna.features["mcolor"]
+			if(S.do_colouration)
+				if(!forced_colour)
+					if(hair_color)
+						if(hair_color == "mutcolor")
+							facial_overlay.color = "#" + H.dna.features["mcolor"]
+						else
+							facial_overlay.color = "#" + hair_color
 					else
-						facial_overlay.color = "#" + hair_color
+						facial_overlay.color = "#" + H.facial_hair_color
 				else
-					facial_overlay.color = "#" + H.facial_hair_color
-			else
-				facial_overlay.color = forced_colour
+					facial_overlay.color = forced_colour
 
 			facial_overlay.alpha = hair_alpha
 
@@ -799,28 +800,29 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				hair_overlay.icon = hair_file
 				hair_overlay.icon_state = hair_state
 
-				if(!forced_colour)
-					if(hair_color)
-						if(hair_color == "mutcolor")
-							hair_overlay.color = "#" + H.dna.features["mcolor"]
+				if(S.do_colouration)
+					if(!forced_colour)
+						if(hair_color)
+							if(hair_color == "mutcolor")
+								hair_overlay.color = "#" + H.dna.features["mcolor"]
+							else
+								hair_overlay.color = "#" + hair_color
 						else
-							hair_overlay.color = "#" + hair_color
+							hair_overlay.color = "#" + H.hair_color
+
+						//Gradients
+						grad_style = H.grad_style
+						grad_color = H.grad_color
+						if(grad_style)
+							var/datum/sprite_accessory/gradient = GLOB.hair_gradients_list[grad_style]
+							var/icon/temp = icon(gradient.icon, gradient.icon_state)
+							var/icon/temp_hair = icon(hair_file, hair_state)
+							temp.Blend(temp_hair, ICON_ADD)
+							gradient_overlay.icon = temp
+							gradient_overlay.color = "#" + grad_color
+
 					else
-						hair_overlay.color = "#" + H.hair_color
-
-					//Gradients
-					grad_style = H.grad_style
-					grad_color = H.grad_color
-					if(grad_style)
-						var/datum/sprite_accessory/gradient = GLOB.hair_gradients_list[grad_style]
-						var/icon/temp = icon(gradient.icon, gradient.icon_state)
-						var/icon/temp_hair = icon(hair_file, hair_state)
-						temp.Blend(temp_hair, ICON_ADD)
-						gradient_overlay.icon = temp
-						gradient_overlay.color = "#" + grad_color
-
-				else
-					hair_overlay.color = forced_colour
+						hair_overlay.color = forced_colour
 
 				hair_overlay.alpha = hair_alpha
 
@@ -1104,7 +1106,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 			if(!husk)
 				if(!forced_colour)
-					switch(S.color_src)
+					switch(S.color_src && S.do_colouration)
 						if(SKINTONE)
 							accessory_overlay.color = SKINTONE2HEX(H.skin_tone)
 						if(MUTCOLORS)
