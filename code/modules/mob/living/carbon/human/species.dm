@@ -2969,3 +2969,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		else
 			to_chat(H, "<span class='notice'>You beat your wings and begin to hover gently above the ground...</span>")
 			H.set_resting(FALSE, TRUE)
+
+/datum/species/proc/generate_valid_sprite_accecories(list/sprite_accecories)
+	var/list/vailds = list()
+	for(var/accecory in sprite_accecories)
+		var/datum/sprite_accessory/S = sprite_accecories[accecory]
+		if(!S.species_allowed || id in S.species_allowed)
+			valids += S
+	return valids

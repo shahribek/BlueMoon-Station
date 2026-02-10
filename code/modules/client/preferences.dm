@@ -4081,15 +4081,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("hair_style")
 					var/new_hair_style
-					new_hair_style = tgui_input_list(user, "Choose your character's hair style:", "Character Preference", GLOB.hair_styles_list)
+					new_hair_style = tgui_input_list(user, "Choose your character's hair style:", "Character Preference", pref_species.generate_valid_sprite_accecories(GLOB.hair_styles_list))
 					if(new_hair_style)
 						hair_style = new_hair_style
 
 				if("next_hair_style")
-					hair_style = next_list_item(hair_style, GLOB.hair_styles_list)
+					hair_style = next_list_item(hair_style, pref_species.generate_valid_sprite_accecories(GLOB.hair_styles_list))
 
 				if("previous_hair_style")
-					hair_style = previous_list_item(hair_style, GLOB.hair_styles_list)
+					hair_style = previous_list_item(hair_style, pref_species.generate_valid_sprite_accecories(GLOB.hair_styles_list))
 
 				if("facial")
 					var/new_facial = input(user, "Choose your character's facial-hair colour:", "Character Preference","#"+facial_hair_color) as color|null
@@ -4098,15 +4098,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("facial_hair_style")
 					var/new_facial_hair_style
-					new_facial_hair_style = tgui_input_list(user, "Choose your character's facial-hair style:", "Character Preference", GLOB.facial_hair_styles_list)
+					new_facial_hair_style = tgui_input_list(user, "Choose your character's facial-hair style:", "Character Preference", pref_species.generate_valid_sprite_accecories(GLOB.facial_hair_styles_list))
 					if(new_facial_hair_style)
 						facial_hair_style = new_facial_hair_style
 
 				if("next_facehair_style")
-					facial_hair_style = next_list_item(facial_hair_style, GLOB.facial_hair_styles_list)
+					facial_hair_style = next_list_item(facial_hair_style, pref_species.generate_valid_sprite_accecories(GLOB.facial_hair_styles_list))
 
 				if("previous_facehair_style")
-					facial_hair_style = previous_list_item(facial_hair_style, GLOB.facial_hair_styles_list)
+					facial_hair_style = previous_list_item(facial_hair_style, pref_species.generate_valid_sprite_accecories(GLOB.facial_hair_styles_list))
 
 				if("grad_color")
 					var/new_grad_color = input(user, "Choose your character's gradient colour:", "Character Preference","#"+grad_color) as color|null
@@ -4129,10 +4129,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				// HORNS
 				if("next_horns_style")
-					features["horns"] = next_list_item(features["horns"], GLOB.horns_list)
+					features["horns"] = next_list_item(features["horns"], pref_species.generate_valid_sprite_accecories(GLOB.horns_list))
 
 				if("previous_horns_style")
-					features["horns"] = previous_list_item(features["horns"], GLOB.horns_list)
+					features["horns"] = previous_list_item(features["horns"], pref_species.generate_valid_sprite_accecories(GLOB.horns_list))
 
 				// MEAT TYPE
 				if("next_meat_type_style")
@@ -4143,164 +4143,164 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				// IPC ANTENNA
 				if("next_ipc_antenna_style")
-					features["ipc_antenna"] = next_list_item(features["ipc_antenna"], GLOB.ipc_antennas_list)
+					features["ipc_antenna"] = next_list_item(features["ipc_antenna"], pref_species.generate_valid_sprite_accecories(GLOB.ipc_antennas_list))
 
 				if("previous_ipc_antenna_style")
-					features["ipc_antenna"] = previous_list_item(features["ipc_antenna"], GLOB.ipc_antennas_list)
+					features["ipc_antenna"] = previous_list_item(features["ipc_antenna"], pref_species.generate_valid_sprite_accecories(GLOB.ipc_antennas_list))
 
 				// IPC SCREENS
 				if("next_ipc_screen_style")
-					features["ipc_screen"] = next_list_item(features["ipc_screen"], GLOB.ipc_screens_list)
+					features["ipc_screen"] = next_list_item(features["ipc_screen"], pref_species.generate_valid_sprite_accecories(GLOB.ipc_screens_list))
 
 				if("previous_ipc_screen_style")
-					features["ipc_screen"] = previous_list_item(features["ipc_screen"], GLOB.ipc_screens_list)
+					features["ipc_screen"] = previous_list_item(features["ipc_screen"], pref_species.generate_valid_sprite_accecories(GLOB.ipc_screens_list))
 
 				// XENO DORSALS
 				if("next_xenodorsal_style")
-					features["xenodorsal"] = next_list_item(features["xenodorsal"], GLOB.xeno_dorsal_list)
+					features["xenodorsal"] = next_list_item(features["xenodorsal"], pref_species.generate_valid_sprite_accecories(GLOB.xeno_dorsal_list))
 
 				if("previous_xenodorsal_style")
-					features["xenodorsal"] = previous_list_item(features["xenodorsal"], GLOB.xeno_dorsal_list)
+					features["xenodorsal"] = previous_list_item(features["xenodorsal"], pref_species.generate_valid_sprite_accecories(GLOB.xeno_dorsal_list))
 
 				// XENO TAILS
 				if("next_xenotail_style")
-					features["xenotail"] = next_list_item(features["xenotail"], GLOB.xeno_tail_list)
+					features["xenotail"] = next_list_item(features["xenotail"], pref_species.generate_valid_sprite_accecories(GLOB.xeno_tail_list))
 
 				if("previous_xenotail_style")
-					features["xenotail"] = previous_list_item(features["xenotail"], GLOB.xeno_tail_list)
+					features["xenotail"] = previous_list_item(features["xenotail"], pref_species.generate_valid_sprite_accecories(GLOB.xeno_tail_list))
 
 				// XENO HEADS
 				if("next_xenohead_style")
-					features["xenohead"] = next_list_item(features["xenohead"], GLOB.xeno_head_list)
+					features["xenohead"] = next_list_item(features["xenohead"], pref_species.generate_valid_sprite_accecories(GLOB.xeno_head_list))
 
 				if("previous_xenohead_style")
-					features["xenohead"] = previous_list_item(features["xenohead"], GLOB.xeno_head_list)
+					features["xenohead"] = previous_list_item(features["xenohead"], pref_species.generate_valid_sprite_accecories(GLOB.xeno_head_list))
 
 				// ARACHNIDS MANDIBLES
 				if("next_arachnid_mandibles_style")
-					features["arachnid_mandibles"] = next_list_item(features["arachnid_mandibles"], GLOB.arachnid_mandibles_list)
+					features["arachnid_mandibles"] = next_list_item(features["arachnid_mandibles"], pref_species.generate_valid_sprite_accecories(GLOB.arachnid_mandibles_list))
 
 				if("previous_arachnid_mandibles_style")
-					features["arachnid_mandibles"] = previous_list_item(features["arachnid_mandibles"], GLOB.arachnid_mandibles_list)
+					features["arachnid_mandibles"] = previous_list_item(features["arachnid_mandibles"], pref_species.generate_valid_sprite_accecories(GLOB.arachnid_mandibles_list))
 
 				// ARACHINDS SPHINNERET
 				if("next_arachnid_spinneret_style")
-					features["arachnid_spinneret"] = next_list_item(features["arachnid_spinneret"], GLOB.arachnid_spinneret_list)
+					features["arachnid_spinneret"] = next_list_item(features["arachnid_spinneret"], pref_species.generate_valid_sprite_accecories(GLOB.arachnid_spinneret_list))
 
 				if("previous_arachnid_spinneret_style")
-					features["arachnid_spinneret"] = previous_list_item(features["arachnid_spinneret"], GLOB.arachnid_spinneret_list)
+					features["arachnid_spinneret"] = previous_list_item(features["arachnid_spinneret"], pref_species.generate_valid_sprite_accecories(GLOB.arachnid_spinneret_list))
 
 				// ARACHNIDS LEGS
 				if("next_arachnid_legs_style")
-					features["arachnid_legs"] = next_list_item(features["arachnid_legs"], GLOB.arachnid_legs_list)
+					features["arachnid_legs"] = next_list_item(features["arachnid_legs"], pref_species.generate_valid_sprite_accecories(GLOB.arachnid_legs_list))
 
 				if("previous_arachnid_legs_style")
-					features["arachnid_legs"] = previous_list_item(features["arachnid_legs"], GLOB.arachnid_legs_list)
+					features["arachnid_legs"] = previous_list_item(features["arachnid_legs"], pref_species.generate_valid_sprite_accecories(GLOB.arachnid_legs_list))
 
 				// WINGS
 				if("next_wings_style")
-					features["wings"] = next_list_item(features["wings"], GLOB.wings_list)
+					features["wings"] = next_list_item(features["wings"], pref_species.generate_valid_sprite_accecories(GLOB.wings_list))
 
 				if("previous_wings_style")
-					features["wings"] = previous_list_item(features["wings"], GLOB.wings_list)
+					features["wings"] = previous_list_item(features["wings"], pref_species.generate_valid_sprite_accecories(GLOB.wings_list))
 
 				// TAUR BODY
 				if("next_taur_style")
-					features["taur"] = next_list_item(features["taur"], GLOB.taur_list)
+					features["taur"] = next_list_item(features["taur"], pref_species.generate_valid_sprite_accecories(GLOB.taur_list))
 
 				if("previous_taur_style")
-					features["taur"] = previous_list_item(features["taur"], GLOB.taur_list)
+					features["taur"] = previous_list_item(features["taur"], pref_species.generate_valid_sprite_accecories(GLOB.taur_list))
 
 				// INSECT FLUFF (NECK AND SPINE)
 				if("next_insect_fluff_style")
-					features["insect_fluff"] = next_list_item(features["insect_fluff"], GLOB.insect_fluffs_list)
+					features["insect_fluff"] = next_list_item(features["insect_fluff"], pref_species.generate_valid_sprite_accecories(GLOB.insect_fluffs_list))
 
 				if("previous_insect_fluff_style")
-					features["insect_fluff"] = previous_list_item(features["insect_fluff"], GLOB.insect_fluffs_list)
+					features["insect_fluff"] = previous_list_item(features["insect_fluff"], pref_species.generate_valid_sprite_accecories(GLOB.insect_fluffs_list))
 
 				// INSECT WINGS
 				if("next_insect_wings_style")
-					features["insect_wings"] = next_list_item(features["insect_wings"], GLOB.insect_wings_list)
+					features["insect_wings"] = next_list_item(features["insect_wings"], pref_species.generate_valid_sprite_accecories(GLOB.insect_wings_list))
 
 				if("previous_insect_wings_style")
-					features["insect_wings"] = previous_list_item(features["insect_wings"], GLOB.insect_wings_list)
+					features["insect_wings"] = previous_list_item(features["insect_wings"], pref_species.generate_valid_sprite_accecories(GLOB.insect_wings_list))
 
 				// DECO WINGS
 				if("next_deco_wings_style")
-					features["deco_wings"] = next_list_item(features["deco_wings"], GLOB.deco_wings_list)
+					features["deco_wings"] = next_list_item(features["deco_wings"], pref_species.generate_valid_sprite_accecories(GLOB.deco_wings_list))
 
 				if("previous_deco_wings_style")
-					features["deco_wings"] = previous_list_item(features["deco_wings"], GLOB.deco_wings_list)
+					features["deco_wings"] = previous_list_item(features["deco_wings"], pref_species.generate_valid_sprite_accecories(GLOB.deco_wings_list))
 
 				// LEGS
 				if("next_legs_style")
-					features["legs"] = next_list_item(features["legs"], GLOB.legs_list)
+					features["legs"] = next_list_item(features["legs"], pref_species.generate_valid_sprite_accecories(GLOB.legs_list))
 
 				if("previous_legs_style")
-					features["legs"] = previous_list_item(features["legs"], GLOB.legs_list)
+					features["legs"] = previous_list_item(features["legs"], pref_species.generate_valid_sprite_accecories(GLOB.legs_list))
 
 				// MAMMAL SNOUTS
 				if("next_mam_snouts_style")
-					features["mam_snouts"] = next_list_item(features["mam_snouts"], GLOB.mam_snouts_list)
+					features["mam_snouts"] = next_list_item(features["mam_snouts"], pref_species.generate_valid_sprite_accecories(GLOB.mam_snouts_list))
 
 				if("previous_mam_snouts_style")
-					features["mam_snouts"] = previous_list_item(features["mam_snouts"], GLOB.mam_snouts_list)
+					features["mam_snouts"] = previous_list_item(features["mam_snouts"], pref_species.generate_valid_sprite_accecories(GLOB.mam_snouts_list))
 
 				// EARS
 				if("next_ears_style")
-					features["ears"] = next_list_item(features["ears"], GLOB.ears_list)
+					features["ears"] = next_list_item(features["ears"], pref_species.generate_valid_sprite_accecories(GLOB.ears_list))
 
 				if("previous_ears_style")
-					features["ears"] = previous_list_item(features["ears"], GLOB.ears_list)
+					features["ears"] = previous_list_item(features["ears"], pref_species.generate_valid_sprite_accecories(GLOB.ears_list))
 
 				// MAMMAL EARS
 				if("next_mam_ears_style")
-					features["mam_ears"] = next_list_item(features["mam_ears"], GLOB.mam_ears_list)
+					features["mam_ears"] = next_list_item(features["mam_ears"], pref_species.generate_valid_sprite_accecories(GLOB.mam_ears_list))
 
 				if("previous_mam_ears_style")
-					features["mam_ears"] = previous_list_item(features["mam_ears"], GLOB.mam_ears_list)
+					features["mam_ears"] = previous_list_item(features["mam_ears"], pref_species.generate_valid_sprite_accecories(GLOB.mam_ears_list))
 
 				// LIZARDS SPINES
 				if("next_spines_style")
-					features["spines"] = next_list_item(features["spines"], GLOB.spines_list)
+					features["spines"] = next_list_item(features["spines"], pref_species.generate_valid_sprite_accecories(GLOB.spines_list))
 
 				if("previous_spines_style")
-					features["spines"] = previous_list_item(features["spines"], GLOB.spines_list)
+					features["spines"] = previous_list_item(features["spines"], pref_species.generate_valid_sprite_accecories(GLOB.spines_list))
 
 				// LIZARDS FRILLS
 				if("next_frills_style")
-					features["frills"] = next_list_item(features["frills"], GLOB.frills_list)
+					features["frills"] = next_list_item(features["frills"], pref_species.generate_valid_sprite_accecories(GLOB.frills_list))
 
 				if("previous_frills_style")
-					features["frills"] = previous_list_item(features["frills"], GLOB.frills_list)
+					features["frills"] = previous_list_item(features["frills"], pref_species.generate_valid_sprite_accecories(GLOB.frills_list))
 
 				// LIZARDS SNOUTS
 				if("next_snout_style")
-					features["snout"] = next_list_item(features["snout"], GLOB.snouts_list)
+					features["snout"] = next_list_item(features["snout"], pref_species.generate_valid_sprite_accecories(GLOB.snouts_list))
 
 				if("previous_snout_style")
-					features["snout"] = previous_list_item(features["snout"], GLOB.snouts_list)
+					features["snout"] = previous_list_item(features["snout"], pref_species.generate_valid_sprite_accecories(GLOB.snouts_list))
 
 				// HUMAN TAILS
 				if("next_tail_human_style")
-					features["tail_human"] = next_list_item(features["tail_human"], GLOB.tails_list_human)
+					features["tail_human"] = next_list_item(features["tail_human"], pref_species.generate_valid_sprite_accecories(GLOB.tails_list_human))
 
 				if("previous_tail_human_style")
-					features["tail_human"] = previous_list_item(features["tail_human"], GLOB.tails_list_human)
+					features["tail_human"] = previous_list_item(features["tail_human"], pref_species.generate_valid_sprite_accecories(GLOB.tails_list_human))
 
 				// LIZARDS TAILS
 				if("next_tail_lizard_style")
-					features["tail_lizard"] = next_list_item(features["tail_lizard"], GLOB.tails_list_lizard)
+					features["tail_lizard"] = next_list_item(features["tail_lizard"], pref_species.generate_valid_sprite_accecories(GLOB.tails_list_lizard))
 
 				if("previous_tail_lizard_style")
-					features["tail_lizard"] = previous_list_item(features["tail_lizard"], GLOB.tails_list_lizard)
+					features["tail_lizard"] = previous_list_item(features["tail_lizard"], pref_species.generate_valid_sprite_accecories(GLOB.tails_list_lizard))
 
 				// MAMMAL TAILS
 				if("next_mam_tail_style")
-					features["mam_tail"] = next_list_item(features["mam_tail"], GLOB.mam_tails_list)
+					features["mam_tail"] = next_list_item(features["mam_tail"], pref_species.generate_valid_sprite_accecories(GLOB.mam_tails_list))
 
 				if("previous_mam_tail_style")
-					features["mam_tail"] = previous_list_item(features["mam_tail"], GLOB.mam_tails_list)
+					features["mam_tail"] = previous_list_item(features["mam_tail"], pref_species.generate_valid_sprite_accecories(GLOB.mam_tails_list))
 				// BLUEMOON ADD END
 
 				if("cycle_bg")
@@ -4312,7 +4312,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/modification_type = tgui_input_list(user, "Choose the modification to the limb:", "Character Preference", LOADOUT_LIMBS)
 						if(modification_type)
 							if(modification_type == LOADOUT_LIMB_PROSTHETIC)
-								var/prosthetic_type = tgui_input_list(user, "Choose the type of prosthetic", "Character Preference", (list("prosthetic") + GLOB.prosthetic_limb_types))
+								var/prosthetic_type = tgui_input_list(user, "Choose the type of prosthetic", "Character Preference", (list("prosthetic") + pref_species.generate_valid_sprite_accecories(GLOB.prosthetic_limb_types)))
 								if(prosthetic_type)
 									var/number_of_prosthetics = 0
 									for(var/modified_limb in modified_limbs)
