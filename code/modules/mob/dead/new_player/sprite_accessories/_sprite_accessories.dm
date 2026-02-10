@@ -77,8 +77,8 @@
 	//For soft-restricting markings to species IDs
 	var/list/recommended_species
 
-	// set to TRUE if your sprite accecory is already colored and you dont want it to be recolored
-	var/do_colouration
+	// set to FALSE if your sprite accecory is already colored and you dont want it to be recolored
+	var/do_colouration = TRUE
 
 	var/mutable_category // simply do not worry about this value
 
