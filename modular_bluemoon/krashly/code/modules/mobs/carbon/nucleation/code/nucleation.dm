@@ -133,6 +133,7 @@
 /datum/sprite_accessory/hair/nucleation
 	recommended_species = list(SPECIES_NUCLEATION)
 	icon = 'modular_bluemoon/krashly/code/modules/mobs/carbon/nucleation/icons/nucleation_face.dmi'
+	do_colouration = FALSE
 
 /datum/sprite_accessory/hair/nucleation/crystals // ТОП 7 НЕФАРСКИХ СТРИЖЕК ЧТОБ ТЕБЯ ОТПИЗДИЛИ В ПОДВОРОТНЯХ.
 	name = "Nucleation Crystals"
