@@ -80,6 +80,9 @@
 	// list of species which can have this accecory. null for all
 	var/list/species_allowed
 
+	// list of species which can't have this sprite accecory
+	var/list/species_unallowed
+
 	var/mutable_category // simply do not worry about this value
 
 /datum/sprite_accessory/proc/is_not_visible(var/mob/living/carbon/human/H, var/tauric) //return if the accessory shouldn't be shown
