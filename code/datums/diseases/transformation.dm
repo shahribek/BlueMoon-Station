@@ -321,3 +321,13 @@
 				to_chat(affected_mob, "<span class='danger'>You let go of what you were holding.</span>")
 				var/obj/item/I = affected_mob.get_active_held_item()
 				affected_mob.dropItemToGround(I)
+
+/datum/disease/transformation/nucleation
+	name = "Nucleafication"
+	agent = "unstoppable body nucleation"
+	desc = "oh, no..."
+	disease_flags = CAN_CARRY // YOU
+	bypasses_immunity = TRUE // CAN'T
+	process_dead = TRUE // ESCAPE
+	infectivity = 0
+
