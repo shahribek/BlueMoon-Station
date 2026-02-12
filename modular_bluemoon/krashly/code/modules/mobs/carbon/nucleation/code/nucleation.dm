@@ -135,7 +135,7 @@
 	icon_state = "crystal_s"
 	icon = 'modular_bluemoon/krashly/code/modules/mobs/carbon/nucleation/icons/nucleation_face.dmi'
 	do_colouration = FALSE
-	recommended_species = list("Nucleation")
+	recommended_species = list(SPECIES_NUCLEATION)
 
 /datum/sprite_accessory/hair/nucleation/betaburns
 	name = "Nucleation Hair 2"
