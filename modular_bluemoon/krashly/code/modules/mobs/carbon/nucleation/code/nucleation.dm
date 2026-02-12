@@ -130,35 +130,33 @@
 
 // ЗА ТО БУДУТ КРУТЫЕ ПРИЧЕСКИ.
 
-/datum/sprite_accessory/hair/nucleation
-	recommended_species = list(SPECIES_NUCLEATION)
+/datum/sprite_accessory/hair/nucleation // ТОП 7 НЕФАРСКИХ СТРИЖЕК ЧТОБ ТЕБЯ ОТПИЗДИЛИ В ПОДВОРОТНЯХ.
+	name = "Nucleation Hair 1"
+	icon_state = "crystal_s"
 	icon = 'modular_bluemoon/krashly/code/modules/mobs/carbon/nucleation/icons/nucleation_face.dmi'
 	do_colouration = FALSE
-
-/datum/sprite_accessory/hair/nucleation/crystals // ТОП 7 НЕФАРСКИХ СТРИЖЕК ЧТОБ ТЕБЯ ОТПИЗДИЛИ В ПОДВОРОТНЯХ.
-	name = "Nucleation Crystals"
-	icon_state = "crystal_s"
+	recommended_species = list("Nucleation")
 
 /datum/sprite_accessory/hair/nucleation/betaburns
-	name = "Betaburns"
+	name = "Nucleation Hair 2"
 	icon_state = "betaburns_s"
 
 /datum/sprite_accessory/hair/nucleation/fallout
-	name = "Fallout"
+	name = "Nucleation Hair 3"
 	icon_state = "fallout_s"
 
 /datum/sprite_accessory/hair/nucleation/frission
-	name = "Frission"
+	name = "Nucleation Hair 4"
 	icon_state = "frission_s"
 
 /datum/sprite_accessory/hair/nucleation/gammaray
-	name = "Gammaray"
+	name = "Nucleation Hair 5"
 	icon_state = "gammaray_s"
 
 /datum/sprite_accessory/hair/nucleation/neutron
-	name = "Neutron"
+	name = "Nucleation Hair 6"
 	icon_state = "neutron_s"
 
 /datum/sprite_accessory/hair/nucleation/radical
-	name = "Radical"
+	name = "Nucleation Hair 7"
 	icon_state = "radical_s"
